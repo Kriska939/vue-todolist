@@ -31,9 +31,11 @@
             </div>
         </header>
 
-        <main class="container w-50">
+        <main class="container w-25">
             <ul class="list-group">
-                <li v-for="task in items" class="list-group-item">{{ task }}</li>
+                <li v-for="(task, index) in items" class="list-group-item d-flex justify-content-between">{{ task }}
+                    <button type="button" class="btn-close" aria-label="Close" @click="deleteTask(index)"></button>
+                </li>
             </ul>
 
         </main>

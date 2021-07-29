@@ -1,3 +1,7 @@
+body {
+    background-color:lightgrey;
+}
+
 img {
     max-width: 80px;
 }
@@ -10,3 +14,25 @@ h1 {
     font-size: 45px;
 }
 
+li, .btn, input {
+    font-family: 'Bebas Neue', cursive;
+}
+
+li:hover {
+    background-color: rgb(255, 255, 124);
+}
+
+
+.special-width {
+    width: 40%;
+}
+
+/* MEDIA QUERIES */
+
+/* SIZE M: */
+@media screen and (max-width: 768px) {
+    .special-width {
+        width: 60%;
+    }
+    
+}

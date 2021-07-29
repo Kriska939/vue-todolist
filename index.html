@@ -32,6 +32,11 @@
         </header>
 
         <main class="container w-25">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Scrivi qui..." v-model="newTask">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                    @click="addTask">Aggiungi</button>
+            </div>
             <ul class="list-group">
                 <li v-for="(task, index) in items" class="list-group-item d-flex justify-content-between">{{ task }}
                     <button type="button" class="btn-close" aria-label="Close" @click="deleteTask(index)"></button>

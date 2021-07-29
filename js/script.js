@@ -31,7 +31,11 @@ const app = new Vue({
             this.items.splice(index, 1);
         },
         addTask() {
-            this.items.push(this.newTask);
+
+            // BONUS: VALIDAZIONE:
+            if (this.newTask.trim() !== "") {
+                this.items.push(this.newTask);
+            }
             this.newTask = "";
         }
     }

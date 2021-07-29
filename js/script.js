@@ -13,3 +13,19 @@ BONUS 1: Fare un controllo di validazione per non aggiungere degli item vuoti.
 BONUS 2: Dedicarsi alla parte grafica aggiungendo un tocco personale e gestendo anche il mobile.
 
 */
+
+const app = new Vue({
+    el: "#app",
+    data: {
+        items: [
+            "Fare la spesa",
+            "Ripassare Vue",
+            "Pagare le bollette",
+            "Fare la valigia",
+            "Prenotare l'hotel",
+        ],
+    },
+    methods: {
+
+    }
+});

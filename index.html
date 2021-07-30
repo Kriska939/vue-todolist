@@ -14,6 +14,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
     <title>To-Do List</title>
 </head>
@@ -35,16 +38,21 @@
         </header>
 
         <main class="container special-width">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Scrivi qui..." v-model="newTask">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-                    @click="addTask">Aggiungi</button>
+            <div class="input-group mb-3 mt-3" v-if="items.length">
+                <input type="text" class="form-control" placeholder="Cerca..." v-model="searchedItem">
+                <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
             </div>
             <ul class="list-group">
                 <li v-for="(task, index) in items" class="list-group-item d-flex justify-content-between">{{ task }}
                     <button type="button" class="btn-close" aria-label="Close" @click="deleteTask(index)"></button>
                 </li>
             </ul>
+            <div class="input-group mb-3 mt-3">
+                <input type="text" class="form-control" placeholder="Scrivi qui..." v-model="newTask"
+                    @keyup.enter='addTask'>
+                <button class="btn btn-outline-success" type="button" id="button-addon2"
+                    @click="addTask">Aggiungi</button>
+            </div>
 
         </main>
 

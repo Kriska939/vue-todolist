@@ -17,6 +17,7 @@ BONUS 2: Dedicarsi alla parte grafica aggiungendo un tocco personale e gestendo 
 const app = new Vue({
     el: "#app",
     data: {
+        searchedItem: "",
         newTask: "",
         items: [
             "Fare la spesa",

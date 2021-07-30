@@ -38,6 +38,12 @@ const app = new Vue({
                 this.items.push(this.newTask);
             }
             this.newTask = "";
+        },
+        checkInclusion(task) {
+            if (!this.searchedItem.trim()) return true;
+            const filter = this.searchedItem.trim().toLowerCase();
+            task = task.toLowerCase();
+            return task.includes(filter);
         }
     }
 });

@@ -39,11 +39,13 @@
 
         <main class="container special-width">
             <div class="input-group mb-3 mt-3" v-if="items.length">
-                <input type="text" class="form-control" placeholder="Cerca..." v-model="searchedItem">
+                <input type="text" class="form-control" placeholder="Cerca..." v-model="searchedItem"
+                    keyup.enter="addTask">
                 <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
             </div>
             <ul class="list-group">
-                <li v-for="(task, index) in items" class="list-group-item d-flex justify-content-between">{{ task }}
+                <li v-for="(task, index) in items" v-if="checkInclusion(task)"
+                    class="list-group-item d-flex justify-content-between">{{ task }}
                     <button type="button" class="btn-close" aria-label="Close" @click="deleteTask(index)"></button>
                 </li>
             </ul>
